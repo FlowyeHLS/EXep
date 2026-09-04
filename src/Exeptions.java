@@ -17,23 +17,57 @@ void main()
 //    }
 
 
-    int num = 0;
-    boolean poka = false;
-    while (!poka)
-    {
-        System.out.println("Type something: ");
-        String string = console.nextLine();
+//    int num = 0;
+//    boolean poka = false;
+//    while (!poka)
+//    {
+//        System.out.println("Type something: ");
+//        String string = console.nextLine();
+//
+//        try
+//        {
+//            num = Integer.parseInt(string);
+//            poka = true;
+//        }
+//        catch (NumberFormatException e)
+//        {
+//            System.out.println("oshibka");
+//        }
+//    }
+//    System.out.println("Ur type: " + num);
 
-        try
-        {
-            num = Integer.parseInt(string);
-            poka = true;
-        }
-        catch (NumberFormatException e)
-        {
-            System.out.println("oshibka");
-        }
+    int[] arr = new int[5];
+    Random random = new Random();
+
+    for (int i = 0; i < arr.length; i++)
+    {
+        arr[i] = random.nextInt(50);
     }
-    System.out.println("Ur type: " + num);
+
+    System.out.println("Type index(0-4): ");
+    int index = console.nextInt();
+
+    System.out.println("type chslo dly delen: ");
+    int deletel = console.nextInt();
+    try
+    {
+        int value = arr[index];
+        int result = value / deletel;
+        System.out.println("result: " + result);
+    }
+    catch (ArrayIndexOutOfBoundsException e)
+    {
+        System.out.println("Zashel za granici");
+    }
+    catch (ArithmeticException ee)
+    {
+        System.out.println("Delet na 0 nemozho");
+    }
+    finally
+    {
+        System.out.println("Vse zakoncheno");
+    }
+
+
 
 }
