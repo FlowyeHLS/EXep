@@ -1,3 +1,5 @@
+package Staroe;
+
 public class Person
 {
     private String name;
